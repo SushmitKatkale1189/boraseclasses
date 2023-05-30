@@ -1,0 +1,26 @@
+
+<%- include('_admin_navbar') %>
+
+<section class="section course" id="courses" aria-label="course">
+    <div class="container">
+
+      <p class="section-subtitle">Our Staff</p>
+
+      <ul class="grid-list">
+
+        <% for( let i = 0; i < faculty.length; i++ ) { %>
+          <%- include('_faculty_form' , {
+            "faculty" : faculty[i]
+          })  %>
+        <% } %>
+
+      </ul>
+
+      <a class="btn has-before z-50">
+        <span class="span"><%- include('_faculty_add_form')  %></span>
+
+        <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
+      </a>
+
+    </div>
+</section>

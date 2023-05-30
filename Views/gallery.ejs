@@ -1,0 +1,57 @@
+
+<%- include('_navbar') %>
+
+<section class="section blog has-bg-image" id="blog" aria-label="blog"
+        style="background-image: url('./Static/Images/blog-bg.svg')">
+        <div class="container ">
+
+          <p class="section-subtitle">Gallery</p>
+
+          <h2 class="h2 section-title">Memories Are <span class="span">Timeless Treasures</span> Of The Heart</h2>
+
+          <!-- ----------------------------------------------------------------------------------------------- -->
+
+            <ul class="grid-list max-h-[1080px] overflow-y-scroll overflow-x-hidden scrollbar-thin scrollbar-thumb-gray-500 scrollbar-corner-rounded-full scrollbar-thumb-rounded-full scrollbar-corner-green-500 " id="galleryImages">
+
+
+              <% for( let i = 0; i < gallery.length; i++ ) { %>
+                <li>
+                  <div class="blog-card">
+            
+                    <img src="<%= gallery[i].g_image %>" alt="" class="p-0 w-[500px] aspect-[1.35] object-cover max-w-full rounded-lg bg-transparent m-2 hover:p-2 transition-all duration-500">
+                    
+                  </div>
+                </li>
+              <% } %>
+
+            </ul>
+
+          <!-- ----------------------------------------------------------------------------------------------- -->
+
+          <p class="section-subtitle">Videos</p>
+
+          <h2 class="h2 section-title">Memories Are <span class="span">Timeless Treasures</span> Of The Heart</h2>
+
+          <!-- ----------------------------------------------------------------------------------------------- -->
+
+          <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+
+
+            <% for( let i = 0; i < youtube.length; i++ ) { %>
+              <iframe src="https://www.youtube.com/embed/<%= youtube[i].y_link  %>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen class="p-0 w-[500px] aspect-[1.35] object-cover max-w-full rounded-lg bg-transparent m-2 transition-all duration-500"></iframe>
+            <% } %>
+
+          </div>
+
+          <!-- ----------------------------------------------------------------------------------------------- -->
+
+          <img src="./Static/Images/blog-shape.png" width="186" height="186" loading="lazy" alt=""
+            class="shape blog-shape">
+
+        </div>
+</section>
+
+
+<%- include('_footer' , {
+  'social': social
+}) %>

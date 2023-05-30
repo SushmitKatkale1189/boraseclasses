@@ -1,0 +1,80 @@
+<style>
+.slides-container {
+	-ms-overflow-style: none; /* Internet Explorer 10+ */
+	scrollbar-width: none; /* Firefox */
+}
+.slides-container::-webkit-scrollbar {
+	display: none; /* Safari and Chrome */
+}
+
+</style>
+
+<!-- ----------------------------------------------------------------------------------------------- -->
+
+<section class="section blog has-bg-image" id="testomonial" aria-label="blog">
+<div class="container">
+
+  <p class="section-subtitle">Reviews</p>
+
+  <h2 class="h2 section-title">People <span class="span">Talk</span> About Us</h2>
+
+    <!-- --------------------------------------------------------------------- -->
+
+    <div id="default-carousel" class="relative w-[1400px] max-w-full aspect-[2.91] m-auto z-10 mb-6 h-[400px]" data-carousel="slide">
+        <!-- Carousel wrapper -->
+        <div class="relative w-full h-full overflow-hidden rounded-tl-lg rounded-tr-lg">
+
+            <% for( let i = 0; i < testomonial.length; i++ ) { %>
+                <div class="hidden duration-700 ease-in-out justify-center items-center" data-carousel-item>
+                    <div class="w-full h-full flex flex-col justify-center items-center">
+                        <img src="<%= testomonial[i].te_photo  %>" alt="" class="w-40 h-40 rounded-full mb-10">
+                        <h3 class="h3">
+                            <a href="#" class="card-title"><%= testomonial[i].te_name  %></a>
+                        </h3>
+                        <span class="badge"><%= testomonial[i].te_tag  %></span>
+                        <p class="hero-text text-center">
+                            <%= testomonial[i].te_value  %>
+                        </p>
+                        <%- include('_stars', {
+                            "n": testomonial[i].te_review
+                        }) %>
+                    </div>
+                </div>
+            <% } %>
+
+        </div>
+        <!-- Slider controls -->
+        <button type="button" class="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
+            <span class="inline-flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                <img src="./Static/Icons/arrowLeft.svg" alt="">
+                <span class="sr-only">Previous</span>
+            </span>
+        </button>
+        <button type="button" class="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
+            <span class="inline-flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                <img src="./Static/Icons/arrowRight.svg" alt="">
+                <span class="sr-only">Next</span>
+            </span>
+        </button>
+    </div>
+    
+</div>
+</section>
+
+<!-- ----------------------------------------------------------------------------------------------- -->
+
+<script>
+    const slidesContainer = document.querySelector(".slides-container");
+const slideWidth = slidesContainer.querySelector(".slide").clientWidth;
+const prevButton = document.querySelector(".prev");
+const nextButton = document.querySelector(".next");
+
+nextButton.addEventListener("click", () => {
+	slidesContainer.scrollLeft += slideWidth;
+});
+
+prevButton.addEventListener("click", () => {
+	slidesContainer.scrollLeft -= slideWidth;
+});
+
+</script>

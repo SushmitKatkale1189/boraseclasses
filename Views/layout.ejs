@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Template by Sushmit Katkale</title>
+    
+    <base href="/">
+
+  <!-- 
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700;800&family=Poppins:wght@400;500&display=swap"
+    rel="stylesheet">
+
+  <!-- 
+    - preload images
+  -->
+  <link rel="preload" as="image" href="./Static/Images/hero-bg.svg">
+  <link rel="preload" as="image" href="./Static/Images/hero-banner-1.jpg">
+  <link rel="preload" as="image" href="./Static/Images/hero-banner-2.jpg">
+  <link rel="preload" as="image" href="./Static/Images/hero-shape-1.svg">
+  <link rel="preload" as="image" href="./Static/Images/hero-shape-2.png">
+
+    <!-- styles -->
+    <link rel="stylesheet" href="./Css/new.css">
+    <link rel="stylesheet" href="./Css/tailwind.css">
+    <link rel="stylesheet" href="./Css/layout.css">
+    <%- style %>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.css" rel="stylesheet" />
+
+</head>
+<body class="overflow-hidden">
+    
+    <div class="w-full h-full overflow-y-scroll overflow-x-hidden scrollbar-none scroll-smooth">
+        <%- body %>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
+    <%- script %>
+
+    <script src="./Js/script.js" defer></script>
+
+    <!-- icons -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

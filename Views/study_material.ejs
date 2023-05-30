@@ -1,0 +1,111 @@
+<%- include('_navbar') %>
+
+<!-- ----------------------------------------------------------------------------------------------- -->
+
+
+<section class="section blog has-bg-image" id="blog" aria-label="blog"
+style="background-image: url('./Static/Images/blog-bg.svg')">
+<div class="container">
+
+  <p class="section-subtitle">Study Material</p>
+
+  <h2 class="h2 section-title"><span class="span">Quality</span> Education With <span class="span">Quantity</span></h2>
+    <!-- ----------------------------------------------------------------------------------------------- -->
+    <ul class="grid-list">
+
+        <% for( let i = 0; i < material.length; i++ ) { %>
+          <li>
+            <div class="w-[500px] aspect-[2] rounded-lg flex flex-col justify-center items-start px-8 py-4 shadow-xl bg-slate-200 hover:shadow-lg">
+                <a href="#" class="card-subtitle mb-2"><%= material[i].sm_tag %></a>
+                <h3 class="h3">
+                    <a href="#" class="card-title"><%= material[i].sm_name %></a>
+                </h3>
+                <p class="hero-text">
+                    <%= material[i].sm_value %>
+                </p>
+                <a href="<%= material[i].sm_pdf %>" class="inline-flex items-center px-3 py-2 text-3xl font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" target="_blank">
+                    Read pdf
+                    <svg aria-hidden="true" class="w-4 h-4 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                </a>
+            </div>
+          </li>
+        <% } %>
+
+      </ul>
+
+    <!-- <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mb-24">
+        
+
+
+        <div class="w-[500px] aspect-[2] rounded-lg flex flex-col justify-center items-start px-8 py-4 shadow-xl bg-slate-200 hover:shadow-lg">
+            <a href="#" class="card-subtitle mb-2">BE Civil</a>
+            <h3 class="h3">
+                <a href="#" class="card-title">Engineering Mathematics</a>
+            </h3>
+            <p class="hero-text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci dolore perspiciatis cumque,
+            </p>
+            <a href="#" class="inline-flex items-center px-3 py-2 text-3xl font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                Read pdf
+                <svg aria-hidden="true" class="w-4 h-4 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+            </a>
+        </div>
+
+        <div class="w-[500px] aspect-[2] rounded-lg flex flex-col justify-center items-start px-8 py-4 shadow-xl bg-slate-200 hover:shadow-lg">
+            <a href="#" class="card-subtitle mb-2">BE Civil</a>
+            <h3 class="h3">
+                <a href="#" class="card-title">Engineering Mathematics</a>
+            </h3>
+            <p class="hero-text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci dolore perspiciatis cumque,
+            </p>
+            <a href="#" class="inline-flex items-center px-3 py-2 text-3xl font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                Read pdf
+                <svg aria-hidden="true" class="w-4 h-4 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+            </a>
+        </div>
+
+        <div class="w-[500px] aspect-[2] rounded-lg flex flex-col justify-center items-start px-8 py-4 shadow-xl bg-slate-200 hover:shadow-lg">
+            <a href="#" class="card-subtitle mb-2">BE Civil</a>
+            <h3 class="h3">
+                <a href="#" class="card-title">Engineering Mathematics</a>
+            </h3>
+            <p class="hero-text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci dolore perspiciatis cumque,
+            </p>
+            <a href="#" class="inline-flex items-center px-3 py-2 text-3xl font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                Read pdf
+                <svg aria-hidden="true" class="w-4 h-4 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+            </a>
+        </div>
+
+        <div class="w-[500px] aspect-[2] rounded-lg flex flex-col justify-center items-start px-8 py-4 shadow-xl bg-slate-200 hover:shadow-lg">
+            <a href="#" class="card-subtitle mb-2">BE Civil</a>
+            <h3 class="h3">
+                <a href="#" class="card-title">Engineering Mathematics</a>
+            </h3>
+            <p class="hero-text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci dolore perspiciatis cumque,
+            </p>
+            <a href="#" class="inline-flex items-center px-3 py-2 text-3xl font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                Read pdf
+                <svg aria-hidden="true" class="w-4 h-4 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+            </a>
+        </div>
+
+    </div> -->
+
+    <!-- ----------------------------------------------------------------------------------------------- -->
+  <img src="./Static/Images/blog-shape.png" width="186" height="186" loading="lazy" alt=""
+    class="shape blog-shape">
+
+</div>
+</section>
+
+
+<!-- ----------------------------------------------------------------------------------------------- -->
+
+
+<%- include('_footer' , {
+    'social': social
+}) %>

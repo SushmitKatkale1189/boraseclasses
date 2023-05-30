@@ -1,0 +1,81 @@
+
+<%- include('_admin_navbar') %>
+
+      <!-- 
+        - #COURSE
+      -->
+
+<section class="section course" id="courses" aria-label="course">
+        <div class="container">
+
+          <p class="section-subtitle">Courses</p>
+
+          <ul class="grid-list">
+
+            <% for( let i = 0; i < course.length; i++ ) { %>
+              <li>
+                <div class="course-card">
+  
+                  <figure class="card-banner img-holder" style="--width: 370; --height: 220;">
+                    <img src="<%= course[i].co_photo %>" width="370" height="220" loading="lazy"
+                      alt="Build Responsive Real- World Websites with HTML and CSS" class="img-cover">
+                  </figure>
+  
+                  <div class="abs-badge">
+                    <ion-icon name="time-outline" aria-hidden="true"></ion-icon>
+  
+                    <span class="span"><%= course[i].co_duration %> Months</span>
+                  </div>
+  
+                  <div class="card-content">
+  
+                    <span class="badge"><%= course[i].co_tag %></span>
+  
+                    <h3 class="h3">
+                      <%- include('_course_form', {
+                        "course": course[i]
+                      })  %>
+                    </h3>
+  
+                    <%- include('_course_rating', {
+                      "n":course[i].co_rating
+                    })  %>
+  
+                    <data class="price" value="29">₹ <%= course[i].co_price %> /-</data>
+  
+                    <ul class="card-meta-list">
+
+                      <% for( let j = 0; j < tag.length; j++ ) { %>
+
+                          <% if (tag[j].co_id == course[i].id) { %>
+
+                            <li class="card-meta-item">
+
+                              <%- include('_course_tag_form', {
+                                "tag": tag[j]
+                              })  %>
+
+                            </li>
+
+                          <% } %>
+
+                      <% } %>
+  
+                    </ul>
+  
+                  </div>
+  
+                </div>
+              </li>
+            <% } %>
+
+          </ul>
+
+          <a class="btn has-before z-50" >
+            <%- include('_course_add_form')  %>
+
+            <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
+          </a>
+
+        </div>
+</section>

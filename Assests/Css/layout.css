@@ -1,0 +1,131 @@
+/* *,*::before,*::after{
+    margin: 0;
+    padding: 0;
+} */
+
+body{
+    width: 100vw;
+    height: 100vh;
+    color: #001418;
+}
+
+/* --------------------------------- */
+/* Aileron */
+
+@font-face {
+    font-family: 'Aileron-100';
+    src: url('../Static/Fonts/Aileron-UltraLight.otf');
+}
+@font-face {
+    font-family: 'Aileron-200';
+    src: url('../Static/Fonts/Aileron-Thin.otf');
+} 
+@font-face {
+    font-family: 'Aileron-300';
+    src: url('../Static/Fonts/Aileron-Light.otf');
+}
+@font-face {
+    font-family: 'Aileron-400';
+    src: url('../Static/Fonts/Aileron-Regular.otf');
+} 
+@font-face {
+    font-family: 'Aileron-500';
+    src: url('../Static/Fonts/Aileron-Heavy.otf');
+}
+@font-face {
+    font-family: 'Aileron-600';
+    src: url('../Static/Fonts/Aileron-Black.otf');
+}
+
+.font-aileron-100 {
+    font-family: 'Aileron-100';
+}
+.font-aileron-200 {
+    font-family: 'Aileron-200';
+}
+.font-aileron-300 {
+    font-family: 'Aileron-300';
+}
+.font-aileron-400 {
+    font-family: 'Aileron-400';
+}
+.font-aileron-500 {
+    font-family: 'Aileron-500';
+}
+.font-aileron-600 {
+    font-family: 'Aileron-600';
+}
+
+/* --------------------------------- */
+/* Mosk */
+
+@font-face {
+    font-family: 'Mosk-100';
+    src: url('../Static/Fonts/Mosk\ Thin\ 100.ttf');
+}
+@font-face {
+    font-family: 'Mosk-200';
+    src: url('../Static/Fonts/Mosk\ Extra-Light\ 200.ttf');
+} 
+@font-face {
+    font-family: 'Mosk-300';
+    src: url('../Static/Fonts/Mosk\ Light\ 300.ttf');
+}
+@font-face {
+    font-family: 'Mosk-400';
+    src: url('../Static/Fonts/Mosk\ Normal\ 400.ttf');
+} 
+@font-face {
+    font-family: 'Mosk-500';
+    src: url('../Static/Fonts/Mosk\ Medium\ 500.ttf');
+}
+@font-face {
+    font-family: 'Mosk-600';
+    src: url('../Static/Fonts/Mosk\ Semi-Bold\ 600.ttf');
+}
+@font-face {
+    font-family: 'Mosk-700';
+    src: url('../Static/Fonts/Mosk\ Bold\ 700.ttf');
+} 
+@font-face {
+    font-family: 'Mosk-800';
+    src: url('../Static/Fonts/Mosk\ Extra-Bold\ 800.ttf');
+}
+@font-face {
+    font-family: 'Mosk-900';
+    src: url('../Static/Fonts/Mosk\ Ultra-Bold\ 900.ttf');
+}
+
+.font-mosk-100 {
+    font-family: 'Mosk-100';
+}
+.font-mosk-200 {
+    font-family: 'Mosk-200';
+}
+.font-mosk-300 {
+    font-family: 'Mosk-300';
+}
+.font-mosk-400 {
+    font-family: 'Mosk-400';
+}
+.font-mosk-500 {
+    font-family: 'Mosk-500';
+}
+.font-mosk-600 {
+    font-family: 'Mosk-600';
+}
+.font-mosk-700 {
+    font-family: 'Mosk-700';
+}
+.font-mosk-800 {
+    font-family: 'Mosk-800';
+}
+.font-mosk-900 {
+    font-family: 'Mosk-900';
+}
+
+/* --------------------------------- */
+/* Work Sans */
+.font-work{
+    font-family: 'Work Sans', sans-serif;
+}

@@ -1,0 +1,73 @@
+<%- include('_navbar') %>
+
+<!-- ----------------------------------------------------------------------------------------------- -->
+
+<section class="section blog has-bg-image" id="blog" aria-label="blog"
+        style="background-image: url('./Static/Images/blog-bg.svg')">
+        <div class="container">
+
+          <p class="section-subtitle">Our Staff</p>
+
+          <h2 class="h2 section-title">Teachers Who <span class="span">Teach</span> From The <span class="span">Heart</span></h2>
+
+          <ul class="grid-list">
+
+            <% for( let i = 0; i < faculty.length; i++ ) { %>
+              <li>
+                <div class="blog-card">
+  
+                  <figure class="card-banner img-holder has-after" style="--width: 370; --height: 370;">
+                    <img src="<%= faculty[i].f_photo %>" width="370" height="370" loading="lazy"
+                      alt="Become A Better Blogger: Content Planning" class="img-cover">
+                  </figure>
+  
+                  <div class="card-content">
+  
+                    <a href="<%= faculty[i].f_link %>" class="card-btn" aria-label="read more">
+                      <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
+                    </a>
+  
+                    <a href="#" class="card-subtitle"><%= faculty[i].f_tag %></a>
+  
+                    <h3 class="h3">
+                      <a href="#" class="card-title"><%= faculty[i].f_name %></a>
+                    </h3>
+  
+                    <ul class="card-meta-list">
+
+                      <% if (faculty[i].f_jd.length != 0) { %>
+                        <li class="card-meta-item">
+                          <ion-icon name="calendar-outline" aria-hidden="true"></ion-icon>
+    
+                          <span class="span"><%= faculty[i].f_jd %></span>
+                        </li>
+                      <% } %>
+  
+                      <li class="card-meta-item">
+                        <ion-icon name="chatbubbles-outline" aria-hidden="true"></ion-icon>
+  
+                        <span class="span"><%= faculty[i].f_info %></span>
+                      </li>
+  
+                    </ul>
+  
+                  </div>
+  
+                </div>
+              </li>
+            <% } %>
+
+          </ul>
+
+          <img src="./Static/Images/blog-shape.png" width="186" height="186" loading="lazy" alt=""
+            class="shape blog-shape">
+
+        </div>
+</section>
+
+<!-- ----------------------------------------------------------------------------------------------- -->
+
+
+<%- include('_footer' , {
+  'social': social
+}) %>

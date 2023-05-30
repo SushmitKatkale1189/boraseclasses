@@ -1,0 +1,117 @@
+
+
+<%- include('_admin_navbar') %>
+
+<!-- 
+- #CATEGORY
+-->
+
+<div class="container my-10">
+
+    <p class="section-subtitle">Categories</p>
+
+    <ul class="grid-list">
+
+      <% for( let i = 0; i < categorie.length; i++ ) { %>
+      
+        <li>
+          <div class="category-card" style="--color: 170, 75%, 41%">
+  
+            <div class="card-icon">
+              <img src="./Static/Images/category-<%= i+1 %>.svg" width="40" height="40" loading="lazy"
+                alt="<%= categorie[i].c_name %>" class="img">
+            </div>
+  
+            <h3 class="h3">
+              <%- include('_category_form',{
+                "categorie" : categorie[i]
+              })  %>
+            </h3>
+  
+            <p class="card-text">
+              <%= categorie[i].c_value %> 
+            </p>
+  
+            <span class="card-badge"><%= categorie[i].c_tag %></span>
+  
+          </div>
+        </li>
+
+
+      <% } %>
+
+    </ul>
+
+</div>
+
+<!-- 
+- #STATE
+-->
+
+<div class="container my-10">
+
+    <p class="section-subtitle text-3xl">STATES</p>
+
+    <ul class="grid-list">
+
+      <% for( let i = 0; i < state.length; i++ ) { %>
+        
+        <li>
+        
+          <div class="stats-card" style="--color: 170, 75%, 41%">
+            <h3 class="card-title"><%= state[i].s_value  %></h3>
+  
+            <%- include('_state_form',{
+              "state": state[i]
+            })  %>
+          </div>
+
+        </li>
+
+      <% } %>
+
+    </ul>
+
+</div>
+
+<!-- 
+- #Director
+-->
+
+<div class="container my-10">
+    <p class="section-subtitle text-3xl">Director</p>
+
+    <div class="relative overflow-x-auto sm:rounded-lg mt-10 shadow-xl">
+        <table class="w-full text-2xl text-left text-gray-500 dark:text-gray-400">
+            <thead class="text-2xl text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                <tr>
+                    <th scope="col" class="px-6 py-3">
+                        Photo
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        Text
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        Action
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                        <img src="<%= director.d_photo  %>" alt="" class="w-96">
+                    </th>
+                    <td class="px-6 py-4">
+                      <%= director.d_info %>
+                    </td>
+                    <td class="px-6 py-4">
+                        <%- include('_director_form',{
+                          "director":director
+                        })  %>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+

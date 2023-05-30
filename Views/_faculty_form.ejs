@@ -1,0 +1,91 @@
+<!-- Modal toggle -->
+<button data-modal-target="authentication-modal-<%=  `f`+faculty.id  %>" data-modal-toggle="authentication-modal-<%=  `f`+faculty.id  %>" class="hover:underline text-blue-600 font-semibold text-start my-4" type="button">
+    <li>
+        <div class="blog-card">
+
+          <figure class="card-banner img-holder has-after" style="--width: 370; --height: 370;">
+            <img src="<%= faculty.f_photo  %>" width="370" height="370" loading="lazy"
+              alt="Become A Better Blogger: Content Planning" class="img-cover">
+          </figure>
+
+          <div class="card-content">
+
+            <a href="<%= faculty.f_link  %>" class="card-btn" aria-label="read more" target="_blank">
+              <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
+            </a>
+
+            <a href="#" class="card-subtitle"><%= faculty.f_tag  %></a>
+
+            <h3 class="h3">
+              <a class="card-title"><%= faculty.f_name  %></a>
+            </h3>
+
+            <ul class="card-meta-list">
+
+              <% if (faculty.f_jd.length != 0) { %>
+                <li class="card-meta-item">
+                  <ion-icon name="calendar-outline" aria-hidden="true"></ion-icon>
+  
+                  <span class="span"><%= faculty.f_jd  %></span>
+                </li>
+              <% } %>
+
+              <li class="card-meta-item">
+                <ion-icon name="chatbubbles-outline" aria-hidden="true"></ion-icon>
+
+                <span class="span"><%= faculty.f_info  %></span>
+              </li>
+
+            </ul>
+
+          </div>
+
+        </div>
+    </li>
+</button>
+
+<!-- Main modal -->
+<div id="authentication-modal-<%=  `f`+faculty.id  %>" tabindex="-1" aria-hidden="true" class="fixed top-0 left-0 right-0 z-[100] hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
+    
+      <div class="relative w-[500px] h-fit max-w-full max-h-full">
+          <!-- Modal content -->
+          <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+              <button type="button" class="absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-2xl p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-800 dark:hover:text-white" data-modal-hide="authentication-modal-<%=  `f`+faculty.id  %>">
+                  <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                  <span class="sr-only">Close modal</span>
+              </button>
+              <div class="px-6 py-6 lg:px-8">
+                  <h3 class="h3 mb-10">Update Faculty</h3>
+                  <form class="space-y-6" action="/admin/update-faculty" method="post">
+                    <input type="hidden" name="id" value="<%= faculty.id %>">
+                      <div>
+                          <label for="f_name" class="block mb-2 text-2xl font-medium text-gray-900 dark:text-white">Faculty Name</label>
+                          <input type="text" name="f_name" id="f_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-2xl rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" value="<%= faculty.f_name %>" required>
+                      </div>
+                      <div>
+                          <label for="f_tag" class="block mb-2 text-2xl font-medium text-gray-900 dark:text-white">Faculty Tag</label>
+                          <input type="text" name="f_tag" id="f_tag" value="<%= faculty.f_tag %>" class="bg-gray-50 border border-gray-300 text-gray-900 text-2xl rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" required>
+                      </div>
+                      <div>
+                        <label for="f_jd" class="block mb-2 text-2xl font-medium text-gray-900 dark:text-white">Faculty Joining Date</label>
+                        <input type="text" name="f_jd" id="f_jd" value="<%= faculty.f_jd %>" class="bg-gray-50 border border-gray-300 text-gray-900 text-2xl rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white">
+                      </div>
+                      <div>
+                        <label for="f_info" class="block mb-2 text-2xl font-medium text-gray-900 dark:text-white">Faculty Info</label>
+                        <input type="text" name="f_info" id="f_info" value="<%= faculty.f_info %>" class="bg-gray-50 border border-gray-300 text-gray-900 text-2xl rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" required>
+                      </div>
+                      <div>
+                        <label for="f_link" class="block mb-2 text-2xl font-medium text-gray-900 dark:text-white">Faculty Link</label>
+                        <input type="text" name="f_link" id="f_link" value="<%= faculty.f_link %>" class="bg-gray-50 border border-gray-300 text-gray-900 text-2xl rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white">
+                      </div>
+
+                      <div class="w-full flex">
+                        <button type="submit" class="mx-2 w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-2xl px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Update Faculty</button>
+                        <a href="/admin/delete-faculty?id=<%= faculty.id %>" class="mx-2 w-full text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-2xl px-5 py-2.5 text-center dark:bg-red-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Delete Faculty</a>
+                      </div>
+
+                  </form>
+              </div>
+          </div>
+      </div>
+</div> 

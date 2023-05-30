@@ -1,0 +1,46 @@
+<style>
+    #signIN::-webkit-scrollbar{
+        display: none;
+    }
+</style>
+
+
+<section id="signIN" class="signUp flex flex-row justify-center items-center p-[2%] h-screen w-screen overflow-scroll om:items-center">
+    <div class="left flex-col justify-center text-light-1 bg shadow-xl p-[2%] rounded-md max-w-[600px] w-full xl:w-[40%]">
+        <div class="flex flex-col justify-center mb-10">
+            <h1 class="h3 section-title text-start font-bold">
+                Admin Login
+            </h1>
+        </div>
+        <form action="/adminLoginPost" method="POST" class="flex flex-col w-full">
+            <div class="flex flex-row w-full justify-between mb-3">
+                <div class="userEmail flex flex-col w-[48%]" >
+                    <label for="userEmail" class="h3 py-1 mb-1">Your Email</label>
+                    <input type="email" placeholder="narendramodi@gmail.com" id="userEmail" name="email" class="px-2 font-medium outline-none py-5 rounded-md shadow-lg  focus:border-light-2 transition-all ease-in-out duration-150 text-2xl" required>
+                </div>
+                <div class="userPassword flex flex-col w-[48%]" >
+                    <label for="userPassword" class="h3 py-1 mb-1">Password</label>
+                    <input type="password" placeholder="Password" id="userPassword" name="password" class="px-2 font-medium outline-none py-5 rounded-md shadow-lg  focus:border-light-2 transition-all ease-in-out duration-150 text-2xl" required>
+                </div>
+            </div>
+            <div class="flex flex-row w-full justify-around my-3 items-center">
+                <div class="w-[40%] bg-light-1 h-[1px]"></div>
+                <div class="w-[10%] flex justify-center items-center"><h1 class="text-center">or</h1></div>
+                <div class="w-[40%] bg-light-1 h-[1px]"></div>
+            </div> 
+            <div class="signUpByGoogle flex justify-center w-full shadow-xl active:shadow-sm py-4 rounded-md border border-slate-400 my-2">
+                <a href="/google-auth" class="flex justify-center w-full">
+                    <img src="./static/Icons/google.svg" alt="" class="aspect-square w-[4%] mr-5">
+                    <h1>Sign up with Google</h1>
+                </a>
+            </div>
+            <div class="flex items-start px-2 mt-2">
+                <input type="checkbox" name="emailServices" class="mr-2 mt-2" checked disabled>
+                <h1>Remember me</h1>
+            </div>
+            <div class="flex justify-center w-full mt-1">
+                <input type="submit" value="Log in to your account" class="w-full p-2 text-center bg-blue-600 text-white py-3 rounded-md mt-2 cursor-pointer">
+            </div>
+        </form>
+    </div>
+</section>

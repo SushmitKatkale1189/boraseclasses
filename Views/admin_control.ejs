@@ -1,0 +1,102 @@
+<%- include('_admin_navbar')  %>
+
+
+<section class="w-full h-full bg-l1 overflow-x-hidden overflow-y-scroll text-lg md:text-2xl relative" id="adminGallery">
+
+    <div class="relative shadow-md sm:rounded-lg w-[1400px] max-w-full flex flex-col items-center justify-center mx-auto flex-wrapmb-12 mb-8 px-2">
+        <p class="section-subtitle mt-28">Admin Control</p>
+        <table class="w-full text-2xl text-left text-gray-500 dark:text-gray-400">
+            <thead class="text-2xl text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                <tr>
+                    <th scope="col" class="px-6 py-3">
+                        Admin Email
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        Action
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <% for( let i = 0; i < users.length; i++ ) { %>
+                    <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                        <td class="w-[50%] p-4">
+                            <%= users[i].userEmail  %>
+                        </td>
+                        <td class="w-[50%] px-6 py-4 font-semibold text-gray-900 dark:text-white">
+                            
+                        </td>
+                        <% if (users[i].id != 1) { %>
+                            <td class="px-6 py-4">
+                                <a href="/admin/delete-user?id=<%= users[i].id  %>" class="font-medium text-red-600 dark:text-red-500 hover:underline">Remove</a>
+                            </td>
+                        <% } %>
+                    </tr>
+                <% } %>
+
+                <form action="/admin/add-user" method="POST">
+                    <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                        <td class="w-32 p-4">
+                            <input type="email" class="w-full h-full rounded-md text-2xl" placeholder="Email" name="userEmail" required>
+                        </td>
+                        <td class="px-6 py-4 font-semibold text-gray-900 dark:text-white">
+                            <input type="password" class="w-full h-full rounded-md text-2xl" placeholder="Password" name="userPassword" required>
+                        </td>
+                        <td class="px-6 py-4">
+                            <input type="submit" value="Add" class="font-medium text-red-600 dark:text-red-500 hover:underline cursor-pointer">
+                        </td>
+                    </tr>
+                </form>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="relative shadow-md sm:rounded-lg w-[1400px] max-w-full flex flex-col items-center justify-center mx-auto flex-wrapmb-12 mb-8 px-2">
+
+        <p class="section-subtitle mt-28">Social Media</p>
+        <table class="w-full text-2xl text-left text-gray-500 dark:text-gray-400">
+            <thead class="text-2xl text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                <tr>
+                    <th scope="col" class="px-6 py-3">
+                        SR.NO
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        Deatils Name
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        Value
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        Action
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <% for( let i = 0; i < social.length; i++ ) { %>
+                    <form action="/admin/update-social" method="post">
+                        <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                            <td class="w-32 p-4">
+                                <%= i+1 %>
+                            </td>
+                            <td class="w-64 p-4">
+                                <%= social[i].social_name %>
+                            </td>
+                            <td class="px-6 py-4 font-semibold text-gray-900 dark:text-white text-2xl">
+                                <input type="hidden" value="<%= social[i].id %>" name="id">
+                                <input type="url" class="w-full h-full rounded-md text-2xl" value="<%= social[i].social_value %>" name="social_value" required>
+                            </td>
+                            <td class="px-6 py-4">
+                                <input type="submit" value="Update" class="font-medium text-red-600 dark:text-red-500 hover:underline cursor-pointer">
+                            </td>
+                        </tr>
+                    </form>
+                <% } %>
+
+            </tbody>
+        </table>
+    </div>
+
+</section>

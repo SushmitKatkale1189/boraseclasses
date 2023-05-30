@@ -1,0 +1,397 @@
+<main>
+    <article>
+
+      <!-- 
+        - #HERO
+      -->
+
+      <section class="section hero has-bg-image" id="home" aria-label="home"
+        style="background-image: url('./Static/Images/hero-bg.svg')">
+
+        <div class="container">
+
+          <div class="hero-content">
+
+            <h1 class="h1 section-title">
+              The Best Program to <span class="span">Enroll</span> for achievement
+            </h1>
+
+            <p class="hero-text">
+                A community with high expectation and high academic achievement.
+            </p>
+
+            <a href="/courses" class="btn has-before">
+              <span class="span">Find courses</span>
+
+              <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
+            </a>
+
+          </div>
+
+          <figure class="hero-banner">
+
+            <div class="img-holder one" style="--width: 270; --height: 300;">
+              <img src="./Static/Images/hero-banner-1.jpg" width="270" height="300" alt="hero banner" class="img-cover">
+            </div>
+
+            <div class="img-holder two" style="--width: 240; --height: 370;">
+              <img src="./Static/Images/hero-banner-2.jpg" width="240" height="370" alt="hero banner" class="img-cover">
+            </div>
+
+            <img src="./Static/Images/hero-shape-2.png" width="380" height="190" alt="" class="shape hero-shape-1">
+
+            <img src="./Static/Images/hero-shape-1.svg" width="622" height="551" alt="" class="shape hero-shape-2">
+
+          </figure>
+
+        </div>
+      </section>
+
+      <!-- 
+        - #CATEGORY
+      -->
+      
+      <section class="section category" aria-label="category">
+        <div class="container">
+
+          <p class="section-subtitle">Categories</p>
+
+          <h2 class="h2 section-title">
+            We support <span class="span">Online</span> as well as <span class="span">Offline</span> Learning.
+          </h2>
+
+          <p class="section-text">
+            Bring bright future with us
+          </p>
+
+          <% 
+          
+          let colors = ["170, 75%, 41%","351, 83%, 61%","229, 75%, 58%","42, 94%, 55%"];
+
+          %>
+
+          <ul class="grid-list">
+
+            <% for( let i = 0; i < categorie.length; i++ ) { %>
+              <li>
+                <div class="category-card" style="--color: <%= colors[i] %>">
+  
+                  <div class="card-icon">
+                    <img src="./Static/Images/category-<%= i+1 %>.svg" width="40" height="40" loading="lazy"
+                      alt="Online Degree Programs" class="img">
+                  </div>
+  
+                  <h3 class="h3">
+                    <a href="#" class="card-title"><%= categorie[i].c_name %></a>
+                  </h3>
+  
+                  <p class="card-text">
+                    <%= categorie[i].c_value %> 
+                  </p>
+  
+                  <span class="card-badge"><%= categorie[i].c_tag %></span>
+  
+                </div>
+              </li>
+            <% } %>
+
+          </ul>
+
+        </div>
+      </section>
+
+
+      <!-- 
+        - #ABOUT
+      -->
+
+      <section class="section about" id="about" aria-label="about">
+        <div class="container">
+
+          <figure class="about-banner">
+
+            <div class="img-holder" style="--width: 520; --height: 370;">
+              <img src="<%= director.d_photo  %>" width="520" height="370" loading="lazy" alt="about banner"
+                class="img-cover">
+            </div>
+
+            <img src="./Static/Images/about-shape-1.svg" width="360" height="420" loading="lazy" alt=""
+              class="shape about-shape-1">
+
+            <img src="./Static/Images/about-shape-2.svg" width="371" height="220" loading="lazy" alt=""
+              class="shape about-shape-2">
+
+            <img src="./Static/Images/about-shape-3.png" width="722" height="528" loading="lazy" alt=""
+              class="shape about-shape-3">
+
+          </figure>
+
+          <div class="about-content">
+
+            <p class="section-subtitle">About Us</p>
+
+            <h2 class="h2 section-title">
+              Over 10 Years in <span class="span">Distant learning</span> for Skill Development
+            </h2>
+
+            <p class="section-text">
+              <%= director.d_info  %>
+            </p>
+
+            <ul class="about-list">
+
+              <li class="about-item">
+                <ion-icon name="checkmark-done-outline" aria-hidden="true"></ion-icon>
+
+                <span class="span">Expert Trainers</span>
+              </li>
+
+              <li class="about-item">
+                <ion-icon name="checkmark-done-outline" aria-hidden="true"></ion-icon>
+
+                <span class="span">Online/Offline Remote Learning</span>
+              </li>
+
+              <li class="about-item">
+                <ion-icon name="checkmark-done-outline" aria-hidden="true"></ion-icon>
+
+                <span class="span">Doubt Sessions</span>
+              </li>
+
+              <li class="about-item">
+                <ion-icon name="checkmark-done-outline" aria-hidden="true"></ion-icon>
+
+                <span class="span">Weekly Tests</span>
+              </li>
+
+            </ul>
+
+            <img src="./Static/Images/about-shape-4.svg" width="100" height="100" loading="lazy" alt=""
+              class="shape about-shape-4">
+
+          </div>
+
+        </div>
+      </section>
+
+
+      <!-- 
+        - #COURSE
+      -->
+
+      <section class="section course" id="courses" aria-label="course">
+        <div class="container">
+
+          <p class="section-subtitle">Popular Courses</p>
+
+          <h2 class="h2 section-title">Pick A Course To Get Started</h2>
+
+          <ul class="grid-list">
+
+            <% for( let i = 0; i < course.length; i++ ) { %>
+              <li>
+                <div class="course-card">
+  
+                  <figure class="card-banner img-holder" style="--width: 370; --height: 220;">
+                    <img src="<%= course[i].co_photo %>" width="370" height="220" loading="lazy"
+                      alt="Build Responsive Real- World Websites with HTML and CSS" class="img-cover">
+                  </figure>
+  
+                  <div class="abs-badge">
+                    <ion-icon name="time-outline" aria-hidden="true"></ion-icon>
+  
+                    <span class="span"><%= course[i].co_duration %> Months</span>
+                  </div>
+  
+                  <div class="card-content">
+  
+                    <span class="badge"><%= course[i].co_tag %></span>
+  
+                    <h3 class="h3">
+                      <a href="#" class="card-title"><%= course[i].co_title %></a>
+                    </h3>
+  
+                    <%- include('_course_rating', {
+                      "n":course[i].co_rating
+                    })  %>
+  
+                    <data class="price" value="29">₹ <%= course[i].co_price %> /-</data>
+  
+                    <ul class="card-meta-list">
+
+                      <% for( let j = 0; j < tag.length; j++ ) { %>
+
+                          <% if (tag[j].co_id == course[i].id) { %>
+
+                            <li class="card-meta-item">
+
+                              <ion-icon name="library-outline" aria-hidden="true"></ion-icon>
+                              <span class="span"><%= tag[j].t_name  %></span>
+
+                            </li>
+
+                          <% } %>
+
+                      <% } %>
+  
+                    </ul>
+  
+                  </div>
+  
+                </div>
+              </li>
+            <% } %>
+
+          </ul>
+
+          <a href="/courses" class="btn has-before">
+            <span class="span">Browse all courses</span>
+
+            <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
+          </a>
+
+        </div>
+      </section>
+
+      <!-- 
+        - #VIDEO
+      -->
+
+      <section class="video has-bg-image" aria-label="video"
+        style="background-image: url('./Static/Images/video-bg.png')">
+        <div class="container">
+
+          <div class="video-card">
+
+            <div class="video-banner img-holder has-after" style="--width: ; --height: ;">
+
+              <video loop autoplay muted class="h-full w-full object-cover" width="970" height="550" loading="lazy" alt="video banner"
+              class="img-cover">
+                  <source src="./Static/Videos/video1.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+              </video>
+
+              <button class="play-btn" aria-label="play video">
+                <ion-icon name="play" aria-hidden="true"></ion-icon>
+              </button>
+            </div>
+
+            <img src="./Static/Images/video-shape-1.png" width="1089" height="605" loading="lazy" alt=""
+              class="shape video-shape-1">
+
+            <img src="./Static/Images/video-shape-2.png" width="158" height="174" loading="lazy" alt=""
+              class="shape video-shape-2">
+
+          </div>
+
+        </div>
+      </section>
+
+
+      <!-- 
+        - #STATE
+      -->
+
+      <section class="section stats" aria-label="stats">
+        <% 
+      
+        let colors2 = ["170, 75%, 41%", "351, 83%, 61%" , "351, 83%, 61%" , "260, 100%, 67%" ];
+  
+        %>
+        <div class="container">
+
+          <ul class="grid-list">
+
+            <% for( let i = 0; i < state.length; i++ ) { %>
+              <li>
+                <div class="stats-card" style="--color: <%= colors2[i] %>">
+                  <h3 class="card-title"><%= state[i].s_value  %></h3>
+  
+                  <p class="card-text"><%= state[i].s_name  %></p>
+                </div>
+              </li>
+            <% } %>
+
+          </ul>
+
+        </div>
+      </section>
+
+      <!-- 
+        - #Testomonial
+      -->
+
+      <%- include('_testomonial', {
+        'testomonial': testomonial
+      })  %>
+      
+
+      <!-- 
+        - #BLOG
+      -->
+
+      <section class="section blog has-bg-image" id="blog" aria-label="blog"
+        style="background-image: url('./Static/Images/blog-bg.svg')">
+        <div class="container">
+
+          <p class="section-subtitle">Our Staff</p>
+
+          <h2 class="h2 section-title">Teachers Who Teach From The Heart</h2>
+
+          <ul class="grid-list">
+
+            <% for( let i = 0; i < faculty.length; i++ ) { %>
+              <li>
+                <div class="blog-card">
+  
+                  <figure class="card-banner img-holder has-after" style="--width: 370; --height: 370;">
+                    <img src="<%= faculty[i].f_photo %>" width="370" height="370" loading="lazy"
+                      alt="Become A Better Blogger: Content Planning" class="img-cover">
+                  </figure>
+  
+                  <div class="card-content">
+  
+                    <a href="<%= faculty[i].f_link %>" class="card-btn" aria-label="read more">
+                      <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
+                    </a>
+  
+                    <a href="#" class="card-subtitle"><%= faculty[i].f_tag %></a>
+  
+                    <h3 class="h3">
+                      <a href="#" class="card-title"><%= faculty[i].f_name %></a>
+                    </h3>
+  
+                    <ul class="card-meta-list">
+
+                      <% if (faculty[i].f_jd.length != 0) { %>
+                        <li class="card-meta-item">
+                          <ion-icon name="calendar-outline" aria-hidden="true"></ion-icon>
+    
+                          <span class="span"><%= faculty[i].f_jd %></span>
+                        </li>
+                      <% } %>
+  
+                      <li class="card-meta-item">
+                        <ion-icon name="chatbubbles-outline" aria-hidden="true"></ion-icon>
+  
+                        <span class="span"><%= faculty[i].f_info %></span>
+                      </li>
+  
+                    </ul>
+  
+                  </div>
+  
+                </div>
+              </li>
+            <% } %>
+
+          </ul>
+
+          <img src="./Static/Images/blog-shape.png" width="186" height="186" loading="lazy" alt=""
+            class="shape blog-shape">
+
+        </div>
+      </section>
+
+    </article>
+  </main>

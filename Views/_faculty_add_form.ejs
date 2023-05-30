@@ -1,0 +1,50 @@
+<!-- Modal toggle -->
+<button data-modal-target="authentication-modal-8" data-modal-toggle="authentication-modal-8" class="hover:underline text-white font-semibold text-start my-4" type="button">
+    Add New Faculty
+</button>
+
+<!-- Main modal -->
+<div id="authentication-modal-8" tabindex="-1" aria-hidden="true" class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
+    
+      <div class="relative w-[500px] h-fit max-w-full max-h-full">
+          <!-- Modal content -->
+          <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+              <button type="button" class="absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-2xl p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-800 dark:hover:text-white" data-modal-hide="authentication-modal-8">
+                  <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                  <span class="sr-only">Close modal</span>
+              </button>
+              <div class="px-6 py-6 lg:px-8">
+                  <h3 class="h3 mb-10">Add Faculty</h3>
+                  <form class="space-y-6" action="/admin/add-faculty" enctype="multipart/form-data" method="POST">
+                      <div>
+                          <label for="f_name" class="block mb-2 text-2xl font-medium text-gray-900 dark:text-white">Faculty Name</label>
+                          <input type="text" name="f_name" id="f_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-2xl rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="Ms Shivam Bhatacharje" required>
+                      </div>
+                      <div>
+                          <label for="f_tag" class="block mb-2 text-2xl font-medium text-gray-900 dark:text-white">Faculty Tag</label>
+                          <input type="text" name="f_tag" id="f_tag" placeholder="Online" class="bg-gray-50 border border-gray-300 text-gray-900 text-2xl rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" required>
+                      </div>
+                      <div>
+                        <label for="f_jd" class="block mb-2 text-2xl font-medium text-gray-900 dark:text-white">Faculty Joining Date</label>
+                        <input type="text" name="f_jd" id="f_jd" placeholder="Oct 10, 2022" class="bg-gray-50 border border-gray-300 text-gray-900 text-2xl rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white">
+                      </div>
+                      <div>
+                        <label for="f_info" class="block mb-2 text-2xl font-medium text-gray-900 dark:text-white">Faculty Info</label>
+                        <input type="text" name="f_info" id="f_info" placeholder="Master in science" class="bg-gray-50 border border-gray-300 text-gray-900 text-2xl rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" required>
+                      </div>
+                      <div>
+                        <label for="f_link" class="block mb-2 text-2xl font-medium text-gray-900 dark:text-white">Faculty Link</label>
+                        <input type="text" name="f_link" id="f_link" placeholder="instagram.com" class="bg-gray-50 border border-gray-300 text-gray-900 text-2xl rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white">
+                      </div>
+                      <div>
+                        <label for="f_photo" class="block mb-2 text-2xl font-medium text-gray-900 dark:text-white">Faculty Photo</label>
+                        <input type="file" accept="Images/*" name="f_photo" id="f_photo"  class="bg-gray-50 border border-gray-300 text-gray-900 text-2xl rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white">
+                      </div>
+
+                      <button type="submit" class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-2xl px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Add New Faculty</button>
+
+                  </form>
+              </div>
+          </div>
+      </div>
+</div> 
